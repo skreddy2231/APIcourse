@@ -13,3 +13,4 @@ with open(testinput, 'r') as testdata_get:
     print(jsondata["single_user"])
 
 print(data)
+testdata_get.close()

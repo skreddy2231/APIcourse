@@ -1,0 +1,20 @@
+Topics need to cover:
+---------------------
+# how to generate report in TA.
+# how to handle and validate type of authorizations
+# how to validate headers
+# how to create test cases / test suites ?
+# can we group test cases based on tags ?
+# run tests / test suites in parallel ?
+# run tests in sequential ?
+# re-run failure tests ?
+# trigger batch script / schedule cronjob.
+
+# [gmail / outlook]
+# Notify results in email ( start of suite and completion of suite) - test results
+# Notify email, email results in attachment.
+
+# How to setup framework in virtual env? (use in python and RF)
+# create GIT repo
+# configure tests in Jenkins and gitLab
+# setup different type of suites in pipeline
