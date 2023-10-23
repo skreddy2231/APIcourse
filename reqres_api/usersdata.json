@@ -1,14 +1,17 @@
 {
-  "APIURL" : "https://reqres.in",
-"get_users" :"/api/users?page=2",
+  "APIURL": "https://reqres.in",
+  "get_users": "/api/users?page=2",
   "single_user": "/api/users/2",
-  "single_user_notfound" : "/api/users/200",
-"list_resource": "/api/unknown",
+  "single_user_notfound": "/api/users/200",
+  "list_resource": "/api/unknown",
   "list_single_resource": "/api/unknown/6",
-  "list_single_resource_notfound ": "/api/unknown/61",
-  "req_hearders" : {
+  "list_single_resource_notfound": "/api/unknown/61",
+  "req_hearders": {
     "Content-Type": "application/json"
-}
-
-
+  },
+  "create_user": "/api/users",
+  "singleuser_body": {
+    "name": "morpheus",
+    "job": "leader"
+  }
 }

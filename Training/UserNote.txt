@@ -23,3 +23,6 @@ create virtual environment:
 
 4. if need, create file:
 4. pip3 freeze > filename.txt
+
+
+ctrl+Alt + l  - format json
