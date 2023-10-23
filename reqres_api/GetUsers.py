@@ -1,43 +1,36 @@
+from io import open
+
 import requests
 import json
 
-APIURL = 'https://reqres.in'
-id = '2'
-notfound_id = '200'
-
-get_users = '/api/users?page=2'
-single_user = '/api/users/' + id
-single_user_notfound = '/api/users/' + notfound_id
-list_resource = '/api/unknown'
-list_single_resource = '/api/unknown/6'
-list_single_resource_notfound = '/api/unknown/61'
-req_hearders = {
-    'Content-Type': 'application/json'
-}
+testinput = "C:/TestQA/Twilight/rf-2023/APICourse/reqres_api/usersdata.json"
 
 
 # GET ALL users
 def get_AllUsers():
-    response = requests.get(APIURL + get_users, headers=req_hearders)
-    # verify status code
-    assert response.status_code == 200
-    req_response = response.json()
+    with open(testinput, 'r') as getinput:
+        testdata = getinput.read()
+        fetch_data = json.loads(testdata)
+        response = requests.get(fetch_data["APIURL"] + fetch_data["get_users"], headers=fetch_data["req_hearders"])
+        # verify status code
+        assert response.status_code == 200
+        req_response = response.json()
 
-    # <pretty response JSON format>
-    res_jsondata = json.dumps(req_response, indent=4)
-    jsondata = json.loads(res_jsondata)
-    usersDict = {}
-    usersList = []
-    for data in jsondata["data"]:
-        if "Lindsay" in data["first_name"]:
-            print(f'user "{"Lindsay"}" present in json data')
-            # Ques ask1: how to assert user in non-print stmt?
+        # <pretty response JSON format>
+        res_jsondata = json.dumps(req_response, indent=4)
+        jsondata = json.loads(res_jsondata)
+        usersDict = {}
+        usersList = []
+        for data in jsondata["data"]:
+            if "Lindsay" in data["first_name"]:
+                print(f'user "{"Lindsay"}" present in json data')
+                assert "Lindsay" == data["first_name"]
+            usersDict[data["id"]] = data["first_name"]
+            usersList.append(data["first_name"])
 
-        usersDict[data["id"]] = data["first_name"]
-        usersList.append(data["first_name"])
-
-    print(f'Store subset of users in dict:{usersDict} ,\n subset of users in list:{usersList}')
-    # Ques ask2: how to return more than one value?
+        #print(f'Store subset of users in dict:{usersDict} ,\\n subset of users in list:{usersList}')
+        # Ques ask2: how to return more than one value?
+        return usersList,usersDict
 
 
 # GET Request
@@ -104,7 +97,10 @@ def get_SingleUserNotFound():
 
 
 
-# get_AllUsers()
+a ,b = get_AllUsers()
+print(a)
+print(b)
+
 # get_SingleUser()
 # get_SingleUserNotFound()
 # get_ListResources()

@@ -22,7 +22,7 @@ def post_createUser():
     req_jsondata = json.dumps(req_response)
     jsondata = json.loads(req_jsondata)
 
-    if "morpheus" in jsondata["name"]:
-        print("user created success")
+    assert "morpheus" == jsondata["name"]
+
 
 post_createUser()

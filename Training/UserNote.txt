@@ -1,0 +1,25 @@
+upgrade pip# python.exe -m pip install --upgrade pip
+
+**** Serialize and De-Serialize ***
+- import json
+>> loads() takes in a string and returns a json object.
+>> dumps() takes in a json object and returns a string.
+
+Body formats:
+a. curly braces {}  -> type is dictionary
+b. square braces []  -> type is list
+[c]. deal body when it is unstructured. use loads() and dumps() to parse JSON based on expected outcome.
+
+
+refer : https://www.geeksforgeeks.org/json-dumps-in-python/
+
+create virtual environment:
+1. python3 -m venv .venv
+
+2. activate the virtual env:
+2. source .venv/bin/activate
+
+3. pip3 install flask-sqlalchemy
+
+4. if need, create file:
+4. pip3 freeze > filename.txt
