@@ -1,16 +1,22 @@
-
 import requests
 import json
+import os
 
-testinput = "C:/TestQA/Twilight/rf-2023/github_repos/APICourse/reqres_api/usersdata.json"
-with open(testinput, 'r') as getinput:
+absolute_path = os.path.dirname(__file__)
+relative_path = "usersdata.json"
+testinput = os.path.join(absolute_path, relative_path)
+
+with open(testinput, "r") as getinput:
     testdata = getinput.read()
     fetch_data = json.loads(testdata)
 
 
 def post_createUser():
-    response = requests.post(fetch_data["APIURL"] + fetch_data["create_user"], json=fetch_data["singleuser_body"],
-                             headers=fetch_data["req_hearders"])
+    response = requests.post(
+        fetch_data["APIURL"] + fetch_data["create_user"],
+        json=fetch_data["singleuser_body"],
+        headers=fetch_data["req_hearders"],
+    )
     assert response.status_code == 201
     req_response = response.json()
     req_jsondata = json.dumps(req_response)
