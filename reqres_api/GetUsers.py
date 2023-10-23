@@ -1,9 +1,11 @@
 from io import open
-
+import os
 import requests
 import json
 
-testinput = "C:/TestQA/Twilight/rf-2023/APICourse/reqres_api/usersdata.json"
+absolute_path = os.path.dirname(__file__)
+relative_path = "usersdata.json"
+testinput = os.path.join(absolute_path, relative_path)
 with open(testinput, 'r') as getinput:
     testdata = getinput.read()
     fetch_data = json.loads(testdata)
@@ -88,7 +90,8 @@ def get_ListSingleResource():
 
 
 def get_SingleResourceNotFound():
-    response = requests.get(fetch_data["APIURL"] + fetch_data["list_single_resource_notfound"], headers=fetch_data["req_hearders"])
+    response = requests.get(fetch_data["APIURL"] + fetch_data["list_single_resource_notfound"],
+                            headers=fetch_data["req_hearders"])
     req_response = response.json()
     # verify status code when resource not found
     assert response.status_code == 404
@@ -100,11 +103,11 @@ print("\n ****** GET ALL USERS outcome ***** \n")
 print(a)
 print(b)
 
-get_SingleUser()
-get_SingleUserNotFound()
-get_ListResources()
-get_ListSingleResource()
-get_SingleResourceNotFound()
+# get_SingleUser()
+# get_SingleUserNotFound()
+# get_ListResources()
+# get_ListSingleResource()
+# get_SingleResourceNotFound()
 
 # close input urls defined json file
 getinput.close()

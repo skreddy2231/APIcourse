@@ -1,7 +1,8 @@
+
 import requests
 import json
 
-testinput = "C:/TestQA/Twilight/rf-2023/APICourse/reqres_api/usersdata.json"
+testinput = "C:/TestQA/Twilight/rf-2023/github_repos/APICourse/reqres_api/usersdata.json"
 with open(testinput, 'r') as getinput:
     testdata = getinput.read()
     fetch_data = json.loads(testdata)
