@@ -1,4 +1,6 @@
 handle_flatfile = open('sample.txt', 'r')
+print(handle_flatfile.read())
+
 
 second_file = "../FakeRESTApi_swagger/"
 
