@@ -18,3 +18,34 @@ Topics need to cover:
 # create GIT repo
 # configure tests in Jenkins and gitLab
 # setup different type of suites in pipeline
+
+
+-v : verbose
+-s : display print stmt options
+-k : execute only specific test
+# pytest -v -s -k <method-name> <test-file -folder-name
+-m : execute tagging(smoke/sanity) tests
+
+
+
+Q) execute partial string exists in testcase [-k]
+pytest -v -s -k <partial-string-method-name> <test-file -folder-name
+
+pytest -v <specific_filename>
+pytest -v <foldername>
+pytest -s -v
+@pytest.mark.skip("descprion why skip in short note")
+pytest -v -m
+pytest -s -v -m  TopPriority .\reqres_api\
+pytest -s -v -m  "not TopPriority" .\reqres_api\
+pytest -s -v -m  "Regression" .\reqres_api\
+pytest -s -v -m  "Smoke or Regression" .\reqres_api\
+pytest -s -v -m  "Sanity and Regression" .\reqres_api\
+pytest -s -v --disable-pytest-warnings -m "Sanity and Regression" .\reqres_api\
+
+
+#register NEW tags in pytest
+pytest -s -v -m  "Sanity and Regression" .\reqres_api\
+
+
+
