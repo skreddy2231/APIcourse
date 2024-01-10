@@ -29,7 +29,7 @@ myprojectA# scripts\deactivate.bat
 a. myprojectA# pip freeze
 b. myprojectA# pip freeze --local
 
--- this adds diff packages and can add in git repo as one project for team.
+this adds diff packages and can add in git repo as one project for team.
 c. myprojectA# pip freeze --local  > requirements.txt
 ---------------------------------
 	
