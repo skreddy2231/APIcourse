@@ -1,8 +1,10 @@
 # APIcourse
 
 Setup Virtual Environments in Python:
-Allow us install different packages outside the installations of your local computer.
+
+	Allow us install different packages outside the installations of your local computer.
 https://www.youtube.com/watch?v=IAvAlS0CuxI
+
 Step1: below download and install virtualenv 
 #pip install virtualenv
 -- restart terminal and type <virtualenv> and see usage
@@ -21,7 +23,7 @@ myprojectA# pip install numpy
 myprojectA# scripts\deactivate.bat
 
 -- check project specific packages and versions.
-myprojectA# pip list
+Step3: myprojectA# pip list
 
 Step4: Create requirement.txt  file, that only packages available  related to my project 
 a. myprojectA# pip freeze
