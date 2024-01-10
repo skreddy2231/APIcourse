@@ -13,14 +13,14 @@ https://www.youtube.com/watch?v=IAvAlS0CuxI
 #virtualenv myprojectA
 Go to inside project and activate pip virtual project
 #cd myprojectA
-myprojectA# scripts\activate
+myprojectA# Scripts\activate
 
 myprojectA# where pip     --- check where pip all the time before and after virtualenv create. it tells pip path.
 
 myprojectA# pip install numpy==1.22.0     
 		or 
 myprojectA# pip install numpy
-myprojectA# scripts\deactivate.bat
+myprojectA# Scripts\deactivate.bat
 
 -- check project specific packages and versions.
 **Step3**: myprojectA# pip list
