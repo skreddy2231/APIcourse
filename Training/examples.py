@@ -135,3 +135,8 @@ print("recursive slice:", s[1:])
 print("recursive slice2:", s[1:6])
 print("recursive reverse slice3:", s[1:7:2])
 print("recursive reverse slice4:", s[-4:])
+
+a = (10,20,30)
+b = (40)
+print(type(a), type(b))
+#print("tuple result:",a + b)
