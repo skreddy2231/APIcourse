@@ -4,7 +4,7 @@ import sys
 from numpy import number
 
 absolute_path = os.path.dirname(__file__)
-inputfile = absolute_path+"\\..\\Topics.txt"
+inputfile = 4+"\\..\\Topics.txt"
 
 def handle_exceptions(a,b):
     try:
