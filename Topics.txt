@@ -48,4 +48,4 @@ pytest -s -v --disable-pytest-warnings -m "Sanity and Regression" .\reqres_api\
 pytest -s -v -m  "Sanity and Regression" .\reqres_api\
 
 
-
+-- End readme by skreddy2231
